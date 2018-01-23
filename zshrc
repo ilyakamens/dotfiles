@@ -4,13 +4,13 @@ zle_highlight+=(paste:none)
 # use modern completion system (highlight tab completion)
 zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
-# share history between tabs/sessions
-unsetopt inc_append_history
-unsetopt share_history
 
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
+# share history between tabs/sessions
+setopt inc_append_history
+setopt share_history
 
 alias zshrc='vim ~/.zshrc'
 alias rzshrc='vim ~/dev/dotfiles/zshrc'
