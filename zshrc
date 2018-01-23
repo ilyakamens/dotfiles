@@ -2,6 +2,7 @@ PATH=$PATH:/usr/local/bin
 # don't highlight pasted text
 zle_highlight+=(paste:none)
 # Use modern completion system (highlight tab completion)
+zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
 
 HISTFILE=~/.history
