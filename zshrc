@@ -9,7 +9,6 @@ HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 # share history between tabs/sessions
-setopt inc_append_history
 setopt share_history
 
 alias zshrc='vim ~/.zshrc'
