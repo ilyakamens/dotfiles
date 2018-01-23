@@ -1,15 +1,19 @@
 PATH=$PATH:/usr/local/bin
 # don't highlight pasted text
 zle_highlight+=(paste:none)
-# Use modern completion system (highlight tab completion)
+# use modern completion system (highlight tab completion)
 zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
+# share history between tabs/sessions
+unsetopt inc_append_history
+unsetopt share_history
 
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
 alias zshrc='vim ~/.zshrc'
+alias rzshrc='vim ~/dev/dotfiles/zshrc'
 alias rfrsh='source ~/.zshrc'
 
 alias gst='git status'
