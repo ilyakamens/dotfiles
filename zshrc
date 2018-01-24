@@ -1,26 +1,30 @@
 PATH=$PATH:/usr/local/bin
+
+# zsh
 # don't highlight pasted text
 zle_highlight+=(paste:none)
 # use modern completion system (highlight tab completion)
 zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
 
+# history
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 # share history between tabs/sessions
 setopt share_history
 
+# zshrc
 alias zshrc='vim ~/.zshrc'
 alias rzshrc='vim ~/dev/dotfiles/zshrc'
 alias rfrsh='source ~/.zshrc'
 
+# git
 alias gst='git status'
 alias gp='git push'
 alias gpf='git push -f'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
-
 gpu() {
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [[ $# -eq 1 ]]; then
@@ -28,10 +32,16 @@ gpu() {
     fi
     git push -u origin "$branch"
 }
-
 get_git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
+
+# propel
+alias ftests='./docker-shell pytest'
+alias fcov='open htmlcov/index.html'
+alias ttests='./docker-shell trial'
+alias tcov='open ebtbalance/htmlcov/index.html'
+alias listroutes='./docker-shell manage list_routes'
 
 # load colors and name them
 autoload colors && colors
