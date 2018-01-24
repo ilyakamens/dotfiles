@@ -1,5 +1,9 @@
+cask_args appdir: "/Applications"
+
 tap "caskroom/cask"
 
+# To install useful key bindings and fuzzy completion:
+# $(brew --prefix)/opt/fzf/install
 brew "fzf"
 brew "git"
 brew "httpie"
