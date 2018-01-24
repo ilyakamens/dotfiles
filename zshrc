@@ -37,6 +37,7 @@ get_git_branch() {
 }
 
 # propel
+export ANDROID_HOME="/usr/local/opt/android-sdk"
 alias ftests='./docker-shell pytest'
 alias fcov='open htmlcov/index.html'
 alias ttests='./docker-shell trial'
