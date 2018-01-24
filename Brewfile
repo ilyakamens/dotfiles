@@ -1,11 +1,13 @@
 tap "caskroom/cask"
 
+brew "fzf"
 brew "git"
 brew "httpie"
 brew "mas"
 brew "node"
 brew "tmux"
 brew "trash"
+brew "watch"
 brew "yarn"
 brew "youtube-dl"
 
