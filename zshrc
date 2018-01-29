@@ -1,4 +1,5 @@
 PATH=$PATH:/usr/local/bin
+typeset -U PATH path
 
 # zsh
 # don't highlight pasted text
@@ -38,11 +39,16 @@ get_git_branch() {
 
 # propel
 export ANDROID_HOME="/usr/local/opt/android-sdk"
+export ANDROIDSDK="/usr/local/opt/android-sdk"
+export ANDROIDNDK="/usr/local/opt/android-ndk"
+export ANDROIDAPI="15"  # Minimum API version your application require
+export ANDROIDNDKVER="r14"  # Version of the NDK you installed
 alias ftests='./docker-shell pytest'
 alias fcov='open htmlcov/index.html'
 alias ttests='./docker-shell trial'
 alias tcov='open ebtbalance/htmlcov/index.html'
 alias listroutes='./docker-shell manage list_routes'
+source ~/.secrets
 
 # load colors and name them
 autoload colors && colors
