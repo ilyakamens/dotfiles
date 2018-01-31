@@ -49,6 +49,7 @@ alias ttests='./docker-shell trial'
 alias tcov='open ebtbalance/htmlcov/index.html'
 alias listroutes='./docker-shell manage list_routes'
 alias tf='terraform'
+alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
 source ~/.secrets
 
 # load colors and name them
