@@ -48,6 +48,7 @@ alias fcov='open htmlcov/index.html'
 alias ttests='./docker-shell trial'
 alias tcov='open ebtbalance/htmlcov/index.html'
 alias listroutes='./docker-shell manage list_routes'
+alias tf='terraform'
 source ~/.secrets
 
 # load colors and name them
