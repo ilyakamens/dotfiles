@@ -50,6 +50,7 @@ alias tcov='open ebtbalance/htmlcov/index.html'
 alias listroutes='./docker-shell manage list_routes'
 alias tf='terraform'
 alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
+alias f8='flake8'
 source ~/.secrets
 
 # load colors and name them
