@@ -1,0 +1,7 @@
+{
+    "complete_parameters": true,
+    "anaconda_linting_behaviour": "save-only",
+    "anaconda_linter_delay": 0.1,
+    "anaconda_linter_show_errors_on_save": true,
+    "pep8_max_line_length": 100
+}
