@@ -36,6 +36,9 @@ gpu() {
 get_git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
+gg() {
+    git grep --break --heading --line-number "$@"
+}
 
 # propel
 export ANDROID_HOME="/usr/local/opt/android-sdk"
