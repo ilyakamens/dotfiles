@@ -55,6 +55,8 @@ alias tf='terraform'
 alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
 alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
 alias f8='flake8'
+alias cdserver='cd ~/propel/freshebt-server'
+alias cdapp='cd ~/propel/freshebt-app'
 source ~/.secrets
 
 # load colors and name them
