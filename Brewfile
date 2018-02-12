@@ -15,6 +15,10 @@ brew "watch"
 brew "yarn"
 brew "youtube-dl"
 
+# Propel
+brew "imagemagick"
+brew "mrbfrank/android-sdk-24/android-sdk"
+
 cask "colorpicker-skalacolor"
 cask "dash"
 cask "dropbox"
@@ -27,6 +31,9 @@ cask "sizeup"
 cask "spotify"
 cask "sublime-text"
 cask "the-unarchiver"
+
+# Propel
+cask "java"
 
 mas "1Password", id: 443987910
 mas "Paprika Recipe Manager", id: 451907568 
