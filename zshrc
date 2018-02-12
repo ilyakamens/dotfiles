@@ -10,7 +10,7 @@ autoload -Uz compinit && compinit
 
 # history
 HISTFILE=~/.history
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 # share history between tabs/sessions
 setopt share_history
