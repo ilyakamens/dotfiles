@@ -1,6 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
+tap "caskroom/versions"
 
 # To install useful key bindings and fuzzy completion:
 # $(brew --prefix)/opt/fzf/install
@@ -33,7 +34,7 @@ cask "sublime-text"
 cask "the-unarchiver"
 
 # Propel
-cask "java"
+cask "java8"
 
 mas "1Password", id: 443987910
 mas "Paprika Recipe Manager", id: 451907568 
