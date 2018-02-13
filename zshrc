@@ -41,7 +41,15 @@ get_git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
 gg() {
-    git grep --break --heading --line-number "$@"
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: 'gg foo bar baz' searches for 'foo' and excludes dirs/files 'bar' and 'baz'"
+        return
+    fi
+    exclude="-- ."
+    for arg in "${@:2}"; do
+        exclude="$exclude ':!$arg'"
+    done
+    eval "git grep --break --heading --line-number $1 $exclude"
 }
 
 # propel
