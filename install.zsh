@@ -6,3 +6,5 @@ cp Package\ Control.sublime-settings /Users/$USER/Library/Application\ Support/S
 
 cp vimrc ~/.vimrc
 cp gitconfig ~/.gitconfig
+
+ln -sv iterm-profile.json ~/Library/Application\ Support/iTerm2/DynamicProfiles
