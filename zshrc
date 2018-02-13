@@ -1,4 +1,4 @@
-PATH=$PATH:/usr/local/bin
+PATH=/usr/local/bin:$PATH
 typeset -U PATH path
 
 # zsh
@@ -7,6 +7,8 @@ zle_highlight+=(paste:none)
 # use modern completion system (highlight tab completion)
 zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
+# removed '-' '/' '_' '?' '.'
+export WORDCHARS='*[]~=&;!#$%^(){}<>'
 
 # history
 HISTFILE=~/.history
