@@ -71,6 +71,8 @@ alias cdserver='cd ~/propel/freshebt-server'
 alias cdapp='cd ~/propel/freshebt-app'
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
+alias migrate='~/propel/freshebt-server/docker-shell manage migrate'
+alias efs='~/propel/freshebt-server/docker-shell psql efs'
 source ~/.secrets
 
 # alias resetting color in prompt for readability
