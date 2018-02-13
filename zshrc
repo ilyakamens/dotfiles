@@ -69,6 +69,8 @@ alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
 alias f8='flake8'
 alias cdserver='cd ~/propel/freshebt-server'
 alias cdapp='cd ~/propel/freshebt-app'
+alias listdevices='adb devices'
+alias phonelogs='adb logcat'
 source ~/.secrets
 
 # alias resetting color in prompt for readability
@@ -76,7 +78,7 @@ eval R='%{$reset_color%}'
 # perform parameter expansion, command substitution and arithmetic expansion in prompts
 setopt PROMPT_SUBST
 # custom prompt
-export PROMPT='%n %F{magenta}%0~${R} %F{yellow}%*${R} %F{cyan}($(get_git_branch))${R} $ '
+export PROMPT='%n %F{magenta}%0~%f %F{yellow}%*%f %F{cyan}($(get_git_branch))%f $ '
 # include the hostname if this is a remote host
 test -n "$SSH_CLIENT" && PROMPT="%m:$PROMPT"
 
