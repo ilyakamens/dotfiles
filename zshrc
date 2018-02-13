@@ -1,4 +1,6 @@
 PATH=/usr/local/bin:$PATH
+# prevent path from expanding/duplicating
+# when zshrc is sourced
 typeset -U PATH path
 
 # zsh
