@@ -71,17 +71,12 @@ alias cdserver='cd ~/propel/freshebt-server'
 alias cdapp='cd ~/propel/freshebt-app'
 source ~/.secrets
 
-# load colors and name them
-autoload colors && colors
-for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
-    eval $COLOR='%{$fg_no_bold[${(L)COLOR}]%}'  #wrap colours between %{ %} to avoid weird gaps in autocomplete
-    eval BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
-done
-eval RESET='%{$reset_color%}'
+# alias resetting color in prompt for readability
+eval R='%{$reset_color%}'
 # perform parameter expansion, command substitution and arithmetic expansion in prompts
 setopt PROMPT_SUBST
 # custom prompt
-export PROMPT='%n ${MAGENTA}%0~${RESET} ${YELLOW}%*${YELLOW} ${CYAN}($(get_git_branch))${RESET} $ '
+export PROMPT='%n %F{magenta}%0~${R} %F{yellow}%*${R} %F{cyan}($(get_git_branch))${R} $ '
 # include the hostname if this is a remote host
 test -n "$SSH_CLIENT" && PROMPT="%m:$PROMPT"
 
