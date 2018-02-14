@@ -58,6 +58,8 @@ export ANDROIDSDK="/usr/local/opt/android-sdk"
 export ANDROIDNDK="/usr/local/opt/android-ndk"
 export ANDROIDAPI="15"  # Minimum API version your application require
 export ANDROIDNDKVER="r14"  # Version of the NDK you installed
+export freshebtserver="$HOME/propel/freshebt-server"
+export freshebtapp="$HOME/propel/freshebt-app"
 alias ftests='./docker-shell pytest'
 alias fcov='open htmlcov/index.html'
 alias ttests='./docker-shell trial'
@@ -67,13 +69,15 @@ alias tf='terraform'
 alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
 alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
 alias f8='flake8'
-alias cdserver='cd ~/propel/freshebt-server'
-alias cdapp='cd ~/propel/freshebt-app'
+alias cdserver='cd $freshebtserver'
+alias cdapp='cd $freshebtapp'
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
 alias migrate='~/propel/freshebt-server/docker-shell manage migrate'
 alias efs='~/propel/freshebt-server/docker-shell psql efs'
+alias ingrok='ngrok http 1337'
 source ~/.secrets
+source ~/propel/freshebt-app/remote-debug.sh
 
 # alias resetting color in prompt for readability
 eval R='%{$reset_color%}'
