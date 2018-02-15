@@ -23,6 +23,7 @@ setopt share_history
 alias zshrc='vim ~/.zshrc'
 alias rzshrc='vim ~/dev/dotfiles/zshrc'
 alias rfrsh='source ~/.zshrc'
+alias cddotfiles='cd ~/dev/dotfiles'
 
 # git
 alias gst='git status'
