@@ -61,22 +61,24 @@ export ANDROIDAPI="15"  # Minimum API version your application require
 export ANDROIDNDKVER="r14"  # Version of the NDK you installed
 export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtapp="$HOME/propel/freshebt-app"
-alias ftests='./docker-shell pytest'
+alias cdserver='cd $freshebtserver'
+alias cdapp='cd $freshebtapp'
+alias ds="$freshebtserver/docker-shell"
+alias efs='ds psql efs'
+alias migrate='ds manage migrate'
+alias ptest'ds pytest'
+alias ttests='ds trial'
 alias fcov='open htmlcov/index.html'
-alias ttests='./docker-shell trial'
 alias tcov='open ebtbalance/htmlcov/index.html'
-alias listroutes='./docker-shell manage list_routes'
+alias listroutes='ds manage list_routes'
 alias tf='terraform'
 alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
 alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
 alias f8='flake8'
-alias cdserver='cd $freshebtserver'
-alias cdapp='cd $freshebtapp'
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
-alias migrate='~/propel/freshebt-server/docker-shell manage migrate'
-alias efs='~/propel/freshebt-server/docker-shell psql efs'
 alias ingrok='ngrok http 1337'
+alias fixtranslations='ds manage update_i18n'
 source ~/.secrets
 source ~/propel/freshebt-app/remote-debug.sh
 
