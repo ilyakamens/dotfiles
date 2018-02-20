@@ -2,12 +2,14 @@ cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
 tap "caskroom/versions"
+tap "eddieantonio/eddieantonio"
 
 # To install useful key bindings and fuzzy completion:
 # $(brew --prefix)/opt/fzf/install
 brew "fzf"
 brew "git"
 brew "httpie"
+brew "imgcat"
 brew "mas"
 brew "node"
 brew "tmux"
