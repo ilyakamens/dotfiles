@@ -31,6 +31,7 @@ alias gp='git push'
 alias gpf='git push -f'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
+alias gdel='git branch | grep -v master | xargs git branch -D'
 gpu() {
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [[ $# -eq 1 ]]; then
