@@ -12,6 +12,9 @@ autoload -Uz compinit && compinit
 # removed '-' '/' '_' '?' '.'
 export WORDCHARS='*[]~=&;!#$%^(){}<>'
 
+# misc
+alias c='clear'
+
 # history
 HISTFILE=~/.history
 HISTSIZE=100000
@@ -75,6 +78,7 @@ alias listroutes='ds manage list_routes'
 alias tf='terraform'
 alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
 alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
+alias venvtest='source ~/.virtualenvs/test/bin/activate'
 alias f8='flake8'
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
@@ -82,6 +86,12 @@ alias ingrok='ngrok http 1337'
 alias fixtranslations='ds manage update_i18n'
 source ~/.secrets
 source ~/propel/freshebt-app/remote-debug.sh
+
+# misc
+function activate() {
+    source "$HOME/.virtualenvs/$1/bin/activate"
+}
+
 
 # alias resetting color in prompt for readability
 eval R='%{$reset_color%}'
