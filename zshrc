@@ -34,7 +34,7 @@ alias gp='git push'
 alias gpf='git push -f'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
-alias gdel='git branch | grep -v master | xargs git branch -D'
+alias gdel='git branch | grep -v master | grep -v production | xargs git branch -D'
 gpu() {
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [[ $# -eq 1 ]]; then
@@ -85,7 +85,6 @@ alias phonelogs='adb logcat'
 alias ingrok='ngrok http 1337'
 alias fixtranslations='ds manage update_i18n'
 source ~/.secrets
-source ~/propel/freshebt-app/remote-debug.sh
 
 # misc
 function activate() {
