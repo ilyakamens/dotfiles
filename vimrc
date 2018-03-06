@@ -14,3 +14,6 @@ set number
 
 " Syntax highlighting
 syntax on
+
+" select the last changed or pasted text
+nnoremap gp `[v`]
