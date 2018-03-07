@@ -88,6 +88,9 @@ alias fixtranslations='ds manage update_i18n'
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
 alias listen='nmap -sT -O localhost'
+function pssh() {
+    ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
+}
 
 # misc
 function activate() {
