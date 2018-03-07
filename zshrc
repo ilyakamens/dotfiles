@@ -58,6 +58,7 @@ gg() {
 }
 
 # propel
+source ~/.secrets
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 export ANDROIDSDK="/usr/local/opt/android-sdk"
 export ANDROIDNDK="/usr/local/opt/android-ndk"
@@ -87,7 +88,6 @@ alias fixtranslations='ds manage update_i18n'
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
 alias listen='nmap -sT -O localhost'
-source ~/.secrets
 
 # misc
 function activate() {
