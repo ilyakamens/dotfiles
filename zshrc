@@ -1,4 +1,5 @@
 PATH=/usr/local/bin:$PATH
+PATH=~/Library/Python/2.7/bin:$PATH
 # prevent path from expanding/duplicating
 # when zshrc is sourced
 typeset -U PATH path
