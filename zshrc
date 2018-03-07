@@ -88,6 +88,12 @@ alias fixtranslations='ds manage update_i18n'
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
 alias listen='nmap -sT -O localhost'
+alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
+function stageefs() {
+    pushd $freshebtserver 1> /dev/null
+    ./deploy.sh staging $1
+    popd
+}
 function pssh() {
     ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
 }
