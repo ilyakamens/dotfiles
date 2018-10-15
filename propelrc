@@ -39,6 +39,9 @@ alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
 alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
 alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
 
+alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
+alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/android-debug.apk"
+
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
 alias listen='nmap -sT -O localhost'
