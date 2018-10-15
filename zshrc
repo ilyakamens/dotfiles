@@ -1,5 +1,6 @@
 PATH=/usr/local/bin:$PATH
 PATH=~/Library/Python/2.7/bin:$PATH
+PATH=/usr/local/lib/python2.7/site-packages:$PATH
 # prevent path from expanding/duplicating
 # when zshrc is sourced
 typeset -U PATH path
@@ -35,7 +36,7 @@ alias gp='git push'
 alias gpf='git push -f'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
-alias gdel='git branch | grep -v master | grep -v production | xargs git branch -D'
+alias gdel='git branch | grep -v master | xargs git branch -D'
 gpu() {
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [[ $# -eq 1 ]]; then
@@ -59,45 +60,7 @@ gg() {
 }
 
 # propel
-source ~/.secrets
-export ANDROID_HOME="/usr/local/opt/android-sdk"
-export ANDROIDSDK="/usr/local/opt/android-sdk"
-export ANDROIDNDK="/usr/local/opt/android-ndk"
-export ANDROIDAPI="15"  # Minimum API version your application require
-export ANDROIDNDKVER="r14"  # Version of the NDK you installed
-export freshebtserver="$HOME/propel/freshebt-server"
-export freshebtapp="$HOME/propel/freshebt-app"
-alias cdserver="cd $freshebtserver"
-alias cdapp="cd $freshebtapp"
-alias ds="$freshebtserver/docker-shell"
-alias efs='ds psql efs'
-alias migrate='ds manage migrate'
-alias ptest'ds pytest'
-alias ttests='ds trial'
-alias fcov='open htmlcov/index.html'
-alias tcov='open ebtbalance/htmlcov/index.html'
-alias listroutes='ds manage list_routes'
-alias tf='terraform'
-alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
-alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
-alias venvtest='source ~/.virtualenvs/test/bin/activate'
-alias f8='flake8'
-alias listdevices='adb devices'
-alias phonelogs='adb logcat'
-alias ingrok='ngrok http 1337'
-alias fixtranslations='ds manage update_i18n'
-# show which ports are listening for TCP connections on redhat machines
-# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
-alias listen='nmap -sT -O localhost'
-alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
-function stageefs() {
-    pushd $freshebtserver 1> /dev/null
-    ./deploy.sh staging $1
-    popd
-}
-function pssh() {
-    ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
-}
+source ~/dev/dotfiles/propelrc
 
 # misc
 function activate() {
