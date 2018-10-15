@@ -1,7 +1,11 @@
 #!/usr/bin/env zsh
 
+# xcodebuild path
+# Xcode.app/Contents/Developer/usr/bin/xcodebuild
+
 source ~/.secrets
 
+export IOS_BUILD_DIR="platforms/ios/build"
 export ANDROID_SDK_VERSION="4.35.0"
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 export ANDROIDSDK="/usr/local/opt/android-sdk"
@@ -32,6 +36,9 @@ alias ingrok='ngrok http 1337'
 alias fixtranslations='ds manage update_i18n'
 alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
 
+alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
+alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
+
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
 alias listen='nmap -sT -O localhost'
@@ -44,4 +51,23 @@ function stageefs() {
 
 function pssh() {
     ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
+}
+
+function resetplatforms() {
+    gulp clean
+    cordova platform rm android
+    cordova platform rm ios
+    rm -rf plugins
+    gulp clean
+    cordova platform add android@6.3.0 --nosave
+    cordova platform add ios --nosave
+}
+
+function appetizeios() {
+    gulp build-ios
+    rm -rf "${IOS_BUILD_DIR}/FreshEBT.zip"
+    zip -r "FreshEBT.zip" ${IOS_BUILD_DIR}/emulator/*
+    appetize=`curl https://$APPETIZE_KEY@api.appetize.io/v1/apps -F "file=@FreshEBT.zip" -F "note=branch:ilya-test-1, build: #1" -F "platform=ios"`
+    ios_url=`echo $appetize | jq .publicURL`
+    echo $ios_url
 }
