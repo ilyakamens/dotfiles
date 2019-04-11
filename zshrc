@@ -1,6 +1,15 @@
+PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+PATH=/usr/local/Cellar/python/2.7.14_2/bin:$PATH
+PATH=/usr/local/lib/python2.7/site-packages:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=~/Library/Python/2.7/bin:$PATH
-PATH=/usr/local/lib/python2.7/site-packages:$PATH
+PATH=~/node_modules/.bin:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # prevent path from expanding/duplicating
 # when zshrc is sourced
 typeset -U PATH path

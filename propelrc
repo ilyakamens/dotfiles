@@ -1,22 +1,33 @@
 #!/usr/bin/env zsh
 
 # xcodebuild path
-# Xcode.app/Contents/Developer/usr/bin/xcodebuild
+# /Users/ilyakamens/Desktop/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 
 source ~/.secrets
 
+export PATH=/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+export PATH=~/Desktop/apache-maven-3.6.0/bin:$PATH
+export PATH="$freshebtvue/node_modules/.bin":$PATH
 export IOS_BUILD_DIR="platforms/ios/build"
-export ANDROID_SDK_VERSION="4.35.0"
-export ANDROID_HOME="/usr/local/opt/android-sdk"
-export ANDROIDSDK="/usr/local/opt/android-sdk"
-export ANDROIDNDK="/usr/local/opt/android-ndk"
-export ANDROIDAPI="15"  # Minimum API version your application require
-export ANDROIDNDKVER="r14"  # Version of the NDK you installed
+# export ANDROID_SDK_VERSION="4.35.0"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
+export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export GRADLE_HOME="/opt/gradle/gradle-4.10.2"
+export PATH=$GRADLE_HOME/bin:$PATH
+# export ANDROIDSDK="/usr/local/opt/android-sdk"
+# export ANDROIDNDK="/usr/local/opt/android-ndk"
+# export ANDROIDAPI="15"  # Minimum API version your application require
+# export ANDROIDNDKVER="r14"  # Version of the NDK you installed
 export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtapp="$HOME/propel/freshebt-app"
+export freshebtvue="$HOME/propel/freshebt-vue"
 
+alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
 alias cdapp="cd $freshebtapp"
+alias cdv="cd $freshebtvue"
 alias ds="$freshebtserver/docker-shell"
 alias efs='ds psql efs'
 alias migrate='ds manage migrate'
@@ -40,7 +51,8 @@ alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
 alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
 
 alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
-alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/android-debug.apk"
+alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/debug/android-debug.apk"
+alias installandroid2="adb install ~/android-debug.apk"
 
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
@@ -52,18 +64,19 @@ function stageefs() {
     popd
 }
 
-function pssh() {
-    ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
+export cloudmac='administrator@208.52.161.141'
+function cmssh() {
+    ssh -A $cloudmac
 }
 
-function resetplatforms() {
-    gulp clean
-    cordova platform rm android
-    cordova platform rm ios
-    rm -rf plugins
-    gulp clean
-    cordova platform add android@6.3.0 --nosave
-    cordova platform add ios --nosave
+export cloudmac2='administrator@208.52.161.238'
+function cm2ssh() {
+    ssh -A $cloudmac2
+}
+
+
+function pssh() {
+    ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
 }
 
 function appetizeios() {
