@@ -24,6 +24,7 @@ export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
 
+alias card="$freshebtserver/fresh_card/scripts/card.js"
 alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
 alias cdapp="cd $freshebtapp"
