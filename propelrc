@@ -26,12 +26,14 @@ export ANDROIDSDK="/usr/local/android"
 export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
+export freshcard="$HOME/propel/freshcard"
 
 alias card="$freshebtserver/fresh_card/scripts/card.js"
 alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
 alias cdapp="cd $freshebtapp"
 alias cdv="cd $freshebtvue"
+alias cdfc="cd $freshcard"
 alias ds="$freshebtserver/docker-shell"
 alias efs='ds psql efs'
 alias migrate='ds manage migrate'
