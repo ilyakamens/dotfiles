@@ -28,7 +28,7 @@ export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
 export freshcard="$HOME/propel/freshcard"
 
-alias card="$freshcard/py/card"
+alias card="$freshcard/py/src/scripts/card"
 alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
 alias cdapp="cd $freshebtapp"
