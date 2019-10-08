@@ -93,3 +93,5 @@ function appetizeios() {
     ios_url=`echo $appetize | jq .publicURL`
     echo $ios_url
 }
+
+source ~/.android-config
