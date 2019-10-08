@@ -43,7 +43,7 @@ alias cddotfiles='cd ~/dev/dotfiles'
 # git
 alias gst='git status'
 alias gp='git push'
-alias gpf='git push -f'
+alias gpf='git push --force-with-lease'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
 alias gdel='git branch | grep -v master | xargs git branch -D'
