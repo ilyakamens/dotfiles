@@ -27,6 +27,7 @@ export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
 export freshcard="$HOME/propel/freshcard"
+export freshcardserver="$HOME/propel/freshcard-server"
 
 alias card="$freshcard/py/src/scripts/card"
 alias vcs="vue-cli-service"
@@ -95,3 +96,8 @@ function appetizeios() {
 }
 
 source ~/.android-config
+
+FRESHCARD_SERVER_SETUP_ENV="$freshcardserver/bin/setup-env"
+if [[ -r "${FRESHCARD_SERVER_SETUP_ENV}" ]]; then
+    . "${FRESHCARD_SERVER_SETUP_ENV}"
+fi
