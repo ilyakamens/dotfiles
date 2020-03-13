@@ -4,6 +4,9 @@ PATH=/usr/local/lib/python2.7/site-packages:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=~/Library/Python/2.7/bin:$PATH
 PATH=~/node_modules/.bin:$PATH
+PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+PATH="/Library/PostgreSQL/12/bin/:$PATH"
+PATH="/usr/local/mysql/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -76,7 +79,6 @@ source ~/dev/dotfiles/propelrc
 function activate() {
     source "$HOME/.virtualenvs/$1/bin/activate"
 }
-
 
 # alias resetting color in prompt for readability
 eval R='%{$reset_color%}'

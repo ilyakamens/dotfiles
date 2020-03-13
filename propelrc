@@ -28,8 +28,11 @@ export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
 export freshcard="$HOME/propel/freshcard"
 export freshcardserver="$HOME/propel/freshcard-server"
+export freshcardapp="$HOME/propel/freshcard-app"
+export propelinfra="$HOME/propel/propel-infrastructure"
 
 alias card="$freshcard/py/src/scripts/card"
+alias card2="$FCS/docker-shell"
 alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
 alias cdapp="cd $freshebtapp"
@@ -60,6 +63,24 @@ alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ E
 alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
 alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/debug/android-debug.apk"
 alias installandroid2="adb install ~/android-debug.apk"
+
+# Kubectl aliases
+alias kg="KUBECONFIG=$propelinfra/terraform/global/kubeconfig_propel-eks-global kubectl"
+alias kd="KUBECONFIG=$propelinfra/terraform/development/kubeconfig_propel-eks-development kubectl"
+alias ks="KUBECONFIG=$propelinfra/terraform/staging/kubeconfig_propel-eks-staging kubectl"
+alias kp="KUBECONFIG=$propelinfra/terraform/production/kubeconfig_propel-eks-prod kubectl"
+
+# Istioctl aliases
+alias istg="istioctl --kubeconfig $propelinfra/terraform/global/kubeconfig_propel-eks-global"
+alias istd="istioctl --kubeconfig $propelinfra/terraform/development/kubeconfig_propel-eks-development"
+alias ists="istioctl --kubeconfig $propelinfra/terraform/staging/kubeconfig_propel-eks-staging"
+alias istp="istioctl --kubeconfig $propelinfra/terraform/production/kubeconfig_propel-eks-prod"
+
+# Helm aliases
+alias hg="KUBECONFIG=$propelinfra/terraform/global/kubeconfig_propel-eks-global helm"
+alias hd="KUBECONFIG=$propelinfra/terraform/development/kubeconfig_propel-eks-development helm"
+alias hs="KUBECONFIG=$propelinfra/terraform/staging/kubeconfig_propel-eks-staging helm"
+alias hp="KUBECONFIG=$propelinfra/terraform/prod/kubeconfig_propel-eks-prod helm"
 
 # show which ports are listening for TCP connections on redhat machines
 # https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
@@ -100,4 +121,9 @@ source ~/.android-config
 FRESHCARD_SERVER_SETUP_ENV="$freshcardserver/bin/setup-env"
 if [[ -r "${FRESHCARD_SERVER_SETUP_ENV}" ]]; then
     . "${FRESHCARD_SERVER_SETUP_ENV}"
+fi
+
+FRESHCARD_APP_SETUP_ENV="${freshcardapp}/bin/setup-env"
+if [[ -r "${FRESHCARD_APP_SETUP_ENV}" ]]; then
+    . "${FRESHCARD_APP_SETUP_ENV}"
 fi
