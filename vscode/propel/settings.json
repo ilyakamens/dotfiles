@@ -1,0 +1,39 @@
+{
+    "window.zoomLevel": 0,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+        100
+    ],
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.indent": 16,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100",
+        "--target-version",
+        "py37"
+    ],
+    "window.newWindowDimensions": "maximized",
+    "editor.formatOnPaste": true,
+    "[python]": {
+        "editor.formatOnPaste": false
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "editor.multiCursorModifier": "alt",
+    "prettier.printWidth": 100,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.arrowParens": "always",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.sortImports.path": "/Library/Frameworks/Python.framework/Versions/2.7/bin/isort"
+}
