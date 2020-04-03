@@ -1,8 +1,6 @@
-# TODO: Use soft links instead 
+#!/usr/bin/env zsh
 
-cp vimrc ~/.vimrc
-cp gitconfig ~/.gitconfig
-
-# Can't use link for iTerm settings; results in error
-cp iterm-profile.json ~/Library/Application\ Support/iTerm2/DynamicProfiles
-ln -svf vscode/propel/settings.json ~/Library/Application\ Support/Code/User
+ln -f vimrc ~/.vimrc
+ln -f gitconfig ~/.gitconfig
+ln -f iterm-profile.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
+ln -f vscode/propel/settings.json ~/Library/Application\ Support/Code/User/settings.json
