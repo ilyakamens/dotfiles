@@ -102,6 +102,11 @@ function cm2ssh() {
     ssh -A $cloudmac2
 }
 
+export cloudmac3='administrator@208.52.161.197'
+function cm3ssh() {
+    ssh -A $cloudmac3
+}
+
 
 function pssh() {
     ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
