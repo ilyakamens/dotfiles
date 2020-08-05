@@ -73,6 +73,20 @@ gg() {
     done
     eval "git grep --break --heading --line-number $1 $exclude"
 }
+gfix() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: gfix <commit hash>"
+        return
+    fi
+
+    base=$2
+    if [[ -z "$base" ]]; then
+        base=master
+    fi
+
+    git commit --fixup $1
+    GIT_EDITOR=true git rebase --interactive $base
+}
 
 # propel
 source ~/dev/dotfiles/propelrc
