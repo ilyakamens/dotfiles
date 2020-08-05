@@ -57,8 +57,8 @@ alias ingrok='ngrok http 1337'
 alias fixtranslations='ds manage update_i18n'
 alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
 
-alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
-alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
+# alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
+# alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
 
 alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
 alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/debug/android-debug.apk"
