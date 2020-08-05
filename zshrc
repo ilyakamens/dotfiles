@@ -85,7 +85,7 @@ gfix() {
     fi
 
     git commit --fixup $1
-    git rebase --interactive $base
+    GIT_EDITOR=true git rebase --interactive --autosquash $base
 }
 
 # propel
