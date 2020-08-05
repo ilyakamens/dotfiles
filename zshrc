@@ -7,6 +7,8 @@ PATH=~/node_modules/.bin:$PATH
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 PATH="/Library/PostgreSQL/12/bin/:$PATH"
 PATH="/usr/local/mysql/bin:$PATH"
+PATH="/Users/ilyakamens/Library/Python/3.8/bin:$PATH"
+PATH=$PATH:~/google-cloud-sdk/bin
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
