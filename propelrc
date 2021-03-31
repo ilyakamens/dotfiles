@@ -5,63 +5,36 @@
 
 source ~/.secrets
 
+export IOS_BUILD_DIR="platforms/ios/build"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
+export ANDROID_HOME="/usr/local/android"
+export ANDROID_SDK_ROOT="/usr/local/android"
+export ANDROIDSDK="/usr/local/android"
+export GRADLE_HOME="/opt/gradle/gradle-5.3.1"
 export PATH=/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
 export PATH=~/Desktop/apache-maven-3.6.0/bin:$PATH
 export PATH="$freshebtvue/node_modules/.bin":$PATH
 export PATH="/usr/local/android/platform-tools:$PATH"
-export IOS_BUILD_DIR="platforms/ios/build"
-# export ANDROID_SDK_VERSION="4.35.0"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
-export ANDROID_HOME="/usr/local/android"
-export ANDROID_SDK_ROOT="/usr/local/android"
-export GRADLE_HOME="/opt/gradle/gradle-5.3.1"
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
-export ANDROIDSDK="/usr/local/android"
-# export ANDROIDSDK="/usr/local/opt/android-sdk"
-# export ANDROIDNDK="/usr/local/opt/android-ndk"
-# export ANDROIDAPI="15"  # Minimum API version your application require
-# export ANDROIDNDKVER="r14"  # Version of the NDK you installed
+
 export freshebtserver="$HOME/propel/freshebt-server"
-export freshebtapp="$HOME/propel/freshebt-app"
 export freshebtvue="$HOME/propel/freshebt-vue"
-export freshcard="$HOME/propel/freshcard"
 export freshcardserver="$HOME/propel/freshcard-server"
-export freshcardapp="$HOME/propel/freshcard-app"
 export propelinfra="$HOME/propel/propel-infrastructure"
 
-alias card="$freshcard/py/src/scripts/card"
-alias card2="$FCS/docker-shell"
-alias vcs="vue-cli-service"
 alias cdserver="cd $freshebtserver"
-alias cdapp="cd $freshebtapp"
 alias cdv="cd $freshebtvue"
-alias cdfc="cd $freshcard"
-alias ds="$freshebtserver/docker-shell"
-alias efs='ds psql efs'
-alias migrate='ds manage migrate'
-alias ptest'ds pytest'
-alias ttests='ds trial'
-alias fcov='open htmlcov/index.html'
-alias tcov='open ebtbalance/htmlcov/index.html'
-alias listroutes='ds manage list_routes'
-alias tf='terraform'
-alias venvserver='source ~/.virtualenvs/freshebt-server/bin/activate'
-alias venvboto3moto='source ~/.virtualenvs/boto3moto/bin/activate'
-alias venvtest='source ~/.virtualenvs/test/bin/activate'
-alias f8='flake8'
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
 alias ingrok='ngrok http 1337'
 alias fixtranslations='ds manage update_i18n'
-alias stageproxy='ansible-playbook -i devops/inventory/staging devops/proxy.yml'
 
 # alias simid="xcrun simctl list | grep Booted | grep -oE '(\w+-\w+)+'"
 # alias installapp="xcrun simctl install $(simid) $IOS_BUILD_DIR/emulator/Fresh\ EBT.app"
 
 alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
-alias installandroid="adb install $freshebtapp/platforms/android/build/outputs/apk/debug/android-debug.apk"
 alias installandroid2="adb install ~/android-debug.apk"
 
 # Kubectl aliases
@@ -82,43 +55,18 @@ alias hd="KUBECONFIG=$propelinfra/terraform/development/kubeconfig_propel-eks-de
 alias hs="KUBECONFIG=$propelinfra/terraform/staging/kubeconfig_propel-eks-staging helm"
 alias hp="KUBECONFIG=$propelinfra/terraform/prod/kubeconfig_propel-eks-prod helm"
 
-# show which ports are listening for TCP connections on redhat machines
-# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-server-ports.html
-alias listen='nmap -sT -O localhost'
+# K8s helpers
+dpods() {
+    if [[ $# -lt 2 ]]; then
+        echo "Example usage: dpods d papi"
+        return
+    fi
 
-function stageefs() {
-    pushd $freshebtserver 1> /dev/null
-    ./deploy.sh staging $1
-    popd
-}
-
-export cloudmac='administrator@208.52.161.141'
-function cmssh() {
-    ssh -A $cloudmac
-}
-
-export cloudmac2='administrator@208.52.161.238'
-function cm2ssh() {
-    ssh -A $cloudmac2
-}
-
-export cloudmac3='administrator@208.52.161.197'
-function cm3ssh() {
-    ssh -A $cloudmac3
-}
-
-
-function pssh() {
-    ssh -i ~/.ssh/keys/efs-production.pem ec2-user@$1
-}
-
-function appetizeios() {
-    gulp build-ios
-    rm -rf "${IOS_BUILD_DIR}/FreshEBT.zip"
-    zip -r "FreshEBT.zip" ${IOS_BUILD_DIR}/emulator/*
-    appetize=`curl https://$APPETIZE_KEY@api.appetize.io/v1/apps -F "file=@FreshEBT.zip" -F "note=branch:ilya-test-1, build: #1" -F "platform=ios"`
-    ios_url=`echo $appetize | jq .publicURL`
-    echo $ios_url
+    pods="k$1 -n shared get pods --no-headers -o custom-columns=\":metadata.name\" | grep $2"
+    for pod in $(eval $pods);
+    do
+        eval "k$1 -n shared delete pod $pod"
+    done
 }
 
 source ~/.android-config
