@@ -9,6 +9,9 @@ PATH="/Library/PostgreSQL/12/bin/:$PATH"
 PATH="/usr/local/mysql/bin:$PATH"
 PATH="/Users/ilyakamens/Library/Python/3.8/bin:$PATH"
 PATH=$PATH:~/google-cloud-sdk/bin
+PATH=$PATH:/usr/local/go/bin
+
+export GOPATH=/usr/local/go/bin
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -52,6 +55,12 @@ alias gpf='git push --force-with-lease'
 alias gpr='git pull origin master --rebase'
 alias gundo='git reset HEAD~'
 alias gdel='git branch | grep -v master | xargs git branch -D'
+alias grim='git rebase -i master'
+
+get_git_branch() {
+    git rev-parse --abbrev-ref HEAD 2> /dev/null
+}
+
 gpu() {
     branch=$(git rev-parse --abbrev-ref HEAD)
     if [[ $# -eq 1 ]]; then
@@ -59,9 +68,7 @@ gpu() {
     fi
     git push -u origin "$branch"
 }
-get_git_branch() {
-    git rev-parse --abbrev-ref HEAD 2> /dev/null
-}
+
 gg() {
     if [[ $# -lt 1 ]]; then
         echo "Usage: 'gg foo bar baz' searches for 'foo' and excludes dirs/files 'bar' and 'baz'"
@@ -73,6 +80,7 @@ gg() {
     done
     eval "git grep --break --heading --line-number $1 $exclude"
 }
+
 gfix() {
     if [[ $# -lt 1 ]]; then
         echo "Usage: gfix <commit hash>"
