@@ -1,15 +1,10 @@
-PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-PATH=/usr/local/Cellar/python/2.7.14_2/bin:$PATH
-PATH=/usr/local/lib/python2.7/site-packages:$PATH
-PATH=/usr/local/bin:$PATH
-PATH=~/Library/Python/2.7/bin:$PATH
-PATH=~/node_modules/.bin:$PATH
-PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-PATH="/Library/PostgreSQL/12/bin/:$PATH"
-PATH="/usr/local/mysql/bin:$PATH"
-PATH="/Users/ilyakamens/Library/Python/3.8/bin:$PATH"
-PATH=$PATH:~/google-cloud-sdk/bin
-PATH=$PATH:/usr/local/go/bin
+path+=("/usr/local/bin")
+path+=("/Library/PostgreSQL/12/bin/")
+path+=("/usr/local/mysql/bin")
+path+=("/Users/ilyakamens/Library/Python/3.8/bin")
+path+=("~/google-cloud-sdk/bin")
+path+=("/usr/local/go/bin")
+export PATH
 
 export GOPATH=/usr/local/go/bin
 
