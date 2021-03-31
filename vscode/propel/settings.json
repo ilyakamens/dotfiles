@@ -1,16 +1,21 @@
 {
-  "window.zoomLevel": 0,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "100", "--target-version", "py37"],
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "100",
+    "--target-version",
+    "py37"
+  ],
   "window.newWindowDimensions": "maximized",
-  "editor.formatOnPaste": true,
   "[python]": {
     "editor.formatOnPaste": false
   },
@@ -21,15 +26,13 @@
     "editor.tabSize": 2
   },
   "editor.multiCursorModifier": "alt",
-  "prettier.printWidth": 100,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "prettier.arrowParens": "always",
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
   },
   "python.sortImports.path": "/Library/Frameworks/Python.framework/Versions/2.7/bin/isort",
-  "prettier.disableLanguages": ["yaml"],
+  "prettier.disableLanguages": [
+    "yaml"
+  ],
   "[yaml]": {
     "editor.formatOnSave": false
   },
@@ -48,37 +51,52 @@
     "doubleSpacing": false,
     "filters": [
       {
-        "extensions": [".c", ".h"],
+        "extensions": [
+          ".c",
+          ".h"
+        ],
         "native": "/^[a-z]+\\s+\\w+\\(/mgi",
         "display": "/\\S* +(\\w+)/1",
         "sort": 0
       },
       {
-        "extensions": [".cpp", ".hpp"],
+        "extensions": [
+          ".cpp",
+          ".hpp"
+        ],
         "native": "/(?:^\\w+\\s+|^)\\w+[:]*\\w+\\(/mgi",
         "display": "/[\\S ]+(\\w+)/",
         "sort": 0
       },
       {
-        "extensions": [".ts", ".php"],
+        "extensions": [
+          ".ts",
+          ".php"
+        ],
         "native": "/(?:^|\\s)function\\s+\\w+\\(/mg",
         "display": "/\\s*function\\s+(\\w+)/1",
         "sort": 0
       },
       {
-        "extensions": [".asm"],
+        "extensions": [
+          ".asm"
+        ],
         "native": "/^\\w+:\\s*$/mg",
         "display": "/\\w+/",
         "sort": 0
       },
       {
-        "extensions": [".ps1"],
+        "extensions": [
+          ".ps1"
+        ],
         "native": "/function\\s+\\w+-?\\w*\\s*{/img",
         "display": "/function\\s+(\\w+-?\\w*)/1i",
         "sort": 0
       },
       {
-        "extensions": [".py"],
+        "extensions": [
+          ".py"
+        ],
         "native": "/(?:^def|^class|^\\s+def|^\\s+class)\\s\\w+\\s*\\((?:\\s*|\\w+|[\\w\\*,\\s\\'\"=\\(\\)\\{\\}\\[\\]\\/\\.]+)\\):/img",
         "display": "/.*\\)/",
         "sort": 0
@@ -87,5 +105,27 @@
   },
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
-  "editor.formatOnSave": true
+  "files.exclude": {
+    "node_modules": true
+  },
+  "vetur.experimental.templateInterpolationService": true,
+  "editor.formatOnPaste": true,
+  "vetur.format.defaultFormatter.css": "none",
+  "vetur.format.defaultFormatter.html": "none",
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.defaultFormatter.less": "none",
+  "vetur.format.defaultFormatter.postcss": "none",
+  "vetur.format.defaultFormatter.pug": "none",
+  "vetur.format.defaultFormatter.sass": "none",
+  "vetur.format.defaultFormatter.scss": "none",
+  "vetur.format.defaultFormatter.stylus": "none",
+  "vetur.format.defaultFormatter.ts": "none",
+  "editor.formatOnSave": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
