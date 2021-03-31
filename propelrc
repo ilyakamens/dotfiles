@@ -14,7 +14,6 @@ export GRADLE_HOME="/opt/gradle/gradle-5.3.1"
 export PATH=/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
 export PATH=~/Desktop/apache-maven-3.6.0/bin:$PATH
-export PATH="$freshebtvue/node_modules/.bin":$PATH
 export PATH="/usr/local/android/platform-tools:$PATH"
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
