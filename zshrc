@@ -48,9 +48,13 @@ alias gst='git status'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gpr='git pull origin master --rebase'
+alias gpm='git co master && git pull'
 alias gundo='git reset HEAD~'
 alias gdel='git branch | grep -v master | xargs git branch -D'
 alias grim='git rebase -i master'
+alias gcaa='git commit -a --amend'
+
+alias gti='git'
 
 get_git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
@@ -87,8 +91,32 @@ gfix() {
         base=master
     fi
 
+    git add -A
     git commit --fixup $1
     GIT_EDITOR=true git rebase --interactive --autosquash $base
+}
+
+gco() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: gco <branch suffix>"
+        return
+    fi
+
+    branch=""
+    if [[ $1 != "master" ]]; then
+        branch="ilya-"
+    fi
+
+    git co "$branch$1"
+}
+
+gcob() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: gcob <branch suffix>"
+        return
+    fi
+
+    git co -b "ilya-$1"
 }
 
 # propel
