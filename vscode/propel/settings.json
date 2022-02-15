@@ -1,7 +1,5 @@
 {
   "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
   "editor.rulers": [
     100
   ],
@@ -113,11 +111,18 @@
   "vetur.format.defaultFormatter.scss": "none",
   "vetur.format.defaultFormatter.stylus": "none",
   "vetur.format.defaultFormatter.ts": "none",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "redhat.telemetry.enabled": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "workbench.editor.enablePreview": false,
+  "jestrunner.jestCommand": "pnpm run test:unit",
+  "window.zoomLevel": 1
 }
