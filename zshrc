@@ -58,11 +58,12 @@ alias gr='git restore'
 alias grs='git restore --staged'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
-alias gpr='git pull origin master --rebase'
-alias gpm='git co master && git pull'
+alias gpr='git pull origin main --rebase'
+alias gpm='git co main && git pull'
 alias gundo='git reset HEAD~'
-alias gdel='git branch | grep -v master | xargs git branch -D'
-alias grim='git rebase -i master'
+alias gdel='git branch | grep -v main | xargs git branch -D'
+alias grim='git rebase -i main'
+alias gca='git commit -a'
 alias gcaa='git commit -a --amend'
 
 alias gti='git'
@@ -99,7 +100,7 @@ gfix() {
 
     base=$2
     if [[ -z "$base" ]]; then
-        base=master
+        base=main
     fi
 
     git add -A
@@ -114,7 +115,7 @@ gco() {
     fi
 
     branch=""
-    if [[ $1 != "master" ]]; then
+    if [[ $1 != "main" ]]; then
         branch="ilya-"
     fi
 
