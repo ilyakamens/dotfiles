@@ -24,6 +24,11 @@ export freshcardapp="$HOME/propel/freshcard-app"
 export freshcardserver="$HOME/propel/freshcard-server"
 export propelinfra="$HOME/propel/propel-infrastructure"
 
+export KG="$propelinfra/terraform/global/kubeconfig_propel-eks-global"
+export KD="$propelinfra/terraform/development/kubeconfig_propel-eks-development"
+export KS="$propelinfra/terraform/staging/kubeconfig_propel-eks-staging"
+export KP="$propelinfra/terraform/production/kubeconfig_propel-eks-prod"
+
 alias cdserver="cd $freshebtserver"
 alias cdv="cd $freshebtvue"
 alias listdevices='adb devices'
