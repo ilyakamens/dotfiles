@@ -7,6 +7,7 @@ path+=("/usr/local/go/bin")
 export PATH
 
 export GOPATH=/usr/local/go/bin
+export EDITOR=vim
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
