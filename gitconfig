@@ -16,3 +16,6 @@
     # clear output from git commands (grep, diff, log, etc.),
     # but also don't quit if the output is 1 page or less
     pager = less -+X -+F
+
+[init]
+    defaultBranch = main
