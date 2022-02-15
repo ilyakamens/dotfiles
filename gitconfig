@@ -1,4 +1,5 @@
 # This is Git's per-user configuration file.
+
 [user]
     name = Ilya Kamens
     email = ilyakamens@gmail.com
@@ -13,8 +14,8 @@
     dump = cat-file -p
 
 [core]
-    # clear output from git commands (grep, diff, log, etc.),
-    # but also don't quit if the output is 1 page or less
+    # Clear output from git commands (grep, diff, log, etc.),
+    # but also don't quit if the output is 1 page or less.
     pager = less -+X -+F
 
 [init]
