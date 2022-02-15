@@ -30,6 +30,7 @@ export WORDCHARS='*[]~=&;!#$%^(){}<>'
 # misc
 alias c='clear'
 alias resetaudio='sudo kextunload /System/Library/Extensions/AppleHDA.kext && sudo kextload /System/Library/Extensions/AppleHDA.kext'
+alias tf='terraform'
 
 # history
 HISTFILE=~/.history
