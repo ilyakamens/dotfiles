@@ -21,6 +21,7 @@ export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
 export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtvue="$HOME/propel/freshebt-vue"
 export freshcardapp="$HOME/propel/orchard/freshcard-app"
+export orchard="$HOME/propel/orchard"
 export freshcardserver="$HOME/propel/freshcard-server"
 export propelinfra="$HOME/propel/propel-infrastructure"
 
@@ -84,4 +85,9 @@ fi
 FRESHCARD_APP_SETUP_ENV="${freshcardapp}/bin/setup-env"
 if [[ -r "${FRESHCARD_APP_SETUP_ENV}" ]]; then
     . "${FRESHCARD_APP_SETUP_ENV}"
+fi
+
+ORCHARD_SETUP_ENV="${orchard}/bin/setup-env"
+if [[ -r "${ORCHARD_SETUP_ENV}" ]]; then
+    . "${ORCHARD_SETUP_ENV}"
 fi
