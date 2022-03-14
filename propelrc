@@ -20,7 +20,7 @@ export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
 
 export freshebtserver="$HOME/propel/freshebt-server"
 export freshebtvue="$HOME/propel/freshebt-vue"
-export freshcardapp="$HOME/propel/orchard/freshcard-app"
+export freshcardapp="$HOME/propel/orchard/apps/freshcard-app"
 export orchard="$HOME/propel/orchard"
 export freshcardserver="$HOME/propel/freshcard-server"
 export propelinfra="$HOME/propel/propel-infrastructure"
