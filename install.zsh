@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# https://gitlab.com/gnachman/iterm2/-/wikis/back-up-preferences
+
 echo ". ~/dev/dotfiles/zshrc" > ~/.zshrc
 
 # Propel
