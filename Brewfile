@@ -1,7 +1,7 @@
 cask_args appdir: "/Applications"
 
-tap "caskroom/cask"
-tap "caskroom/versions"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 
 brew "httpie"
@@ -22,9 +22,6 @@ cask "sizeup"
 cask "spotify"
 cask "the-unarchiver"
 cask "visual-studio-code"
-
-# Propel
-cask "java8"
 
 mas "1Password", id: 443987910
 mas "Paprika Recipe Manager", id: 451907568 
