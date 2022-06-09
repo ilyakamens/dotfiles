@@ -145,3 +145,6 @@ test -n "$SSH_CLIENT" && PROMPT="%m:$PROMPT"
 
 # fuzzy finder (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
