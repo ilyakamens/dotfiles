@@ -145,6 +145,3 @@ test -n "$SSH_CLIENT" && PROMPT="%m:$PROMPT"
 
 # fuzzy finder (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
