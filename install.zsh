@@ -5,6 +5,7 @@
 echo ". ~/dev/dotfiles/zshrc" > ~/.zshrc
 
 # Propel
+mkdir ~/dev/propel
 touch ~/.secrets
 touch ~/.android-config
 

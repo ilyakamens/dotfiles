@@ -18,18 +18,20 @@ export PATH="/usr/local/android/platform-tools:$PATH"
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
 
-export freshebtserver="$HOME/propel/freshebt-server"
-export freshebtvue="$HOME/propel/freshebt-vue"
-export freshcardapp="$HOME/propel/orchard/apps/freshcard-app"
-export orchard="$HOME/propel/orchard"
-export freshcardserver="$HOME/propel/freshcard-server"
-export propelinfra="$HOME/propel/propel-infrastructure"
+export propel="$HOME/dev/propel"
+export freshebtserver="$propel/freshebt-server"
+export freshebtvue="$propel/freshebt-vue"
+export freshcardapp="$propel/orchard/apps/freshcard-app"
+export orchard="$propel/orchard"
+export freshcardserver="$propel/freshcard-server"
+export propelinfra="$propel/propel-infrastructure"
 
 export KG="$propelinfra/terraform/global/kubeconfig_propel-eks-global"
 export KD="$propelinfra/terraform/development/kubeconfig_propel-eks-development"
 export KS="$propelinfra/terraform/staging/kubeconfig_propel-eks-staging"
 export KP="$propelinfra/terraform/production/kubeconfig_propel-eks-prod"
 
+alias cdpropel="cd $propel"
 alias cdserver="cd $freshebtserver"
 alias cdv="cd $freshebtvue"
 alias listdevices='adb devices'
