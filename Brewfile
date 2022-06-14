@@ -4,6 +4,8 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 
+brew "docker"
+brew "htop"
 brew "httpie"
 brew "imgcat"
 brew "jq"
