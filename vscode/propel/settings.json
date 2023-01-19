@@ -5,7 +5,9 @@
     "source.fixAll.stylelint": true
   },
   "files.trimTrailingWhitespace": true,
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -39,37 +41,52 @@
     "doubleSpacing": false,
     "filters": [
       {
-        "extensions": [".c", ".h"],
+        "extensions": [
+          ".c",
+          ".h"
+        ],
         "native": "/^[a-z]+\\s+\\w+\\(/mgi",
         "display": "/\\S* +(\\w+)/1",
         "sort": 0
       },
       {
-        "extensions": [".cpp", ".hpp"],
+        "extensions": [
+          ".cpp",
+          ".hpp"
+        ],
         "native": "/(?:^\\w+\\s+|^)\\w+[:]*\\w+\\(/mgi",
         "display": "/[\\S ]+(\\w+)/",
         "sort": 0
       },
       {
-        "extensions": [".ts", ".php"],
+        "extensions": [
+          ".ts",
+          ".php"
+        ],
         "native": "/(?:^|\\s)function\\s+\\w+\\(/mg",
         "display": "/\\s*function\\s+(\\w+)/1",
         "sort": 0
       },
       {
-        "extensions": [".asm"],
+        "extensions": [
+          ".asm"
+        ],
         "native": "/^\\w+:\\s*$/mg",
         "display": "/\\w+/",
         "sort": 0
       },
       {
-        "extensions": [".ps1"],
+        "extensions": [
+          ".ps1"
+        ],
         "native": "/function\\s+\\w+-?\\w*\\s*{/img",
         "display": "/function\\s+(\\w+-?\\w*)/1i",
         "sort": 0
       },
       {
-        "extensions": [".py"],
+        "extensions": [
+          ".py"
+        ],
         "native": "/(?:^def|^class|^\\s+def|^\\s+class)\\s\\w+\\s*\\((?:\\s*|\\w+|[\\w\\*,\\s\\'\"=\\(\\)\\{\\}\\[\\]\\/\\.]+)\\):/img",
         "display": "/.*\\)/",
         "sort": 0
