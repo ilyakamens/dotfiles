@@ -159,3 +159,8 @@ test -n "$SSH_CLIENT" && PROMPT="%m:$PROMPT"
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# pipx
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
