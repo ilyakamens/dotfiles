@@ -127,6 +127,16 @@ gcob() {
     git co -b "ilya-$1"
 }
 
+# Git rebase main: Set `main` as the base branch.
+grm() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: grm <old branch>"
+        return
+    fi
+
+    git rebase --onto main $1 $(get_git_branch)
+}
+
 # propel
 source ~/dev/dotfiles/propelrc
 
