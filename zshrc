@@ -112,7 +112,7 @@ gco() {
 
     branch=""
     if [[ $1 != "main" ]]; then
-        branch="ilya-"
+        branch="ilya/"
     fi
 
     git co "$branch$1"
@@ -124,7 +124,7 @@ gcob() {
         return
     fi
 
-    git co -b "ilya-$1"
+    git co -b "ilya/$1"
 }
 
 # Git rebase main: Set `main` as the base branch.
