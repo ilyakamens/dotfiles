@@ -55,12 +55,6 @@ alias kd="KUBECONFIG=~/.kube/eks-development kubectl"
 alias ks="KUBECONFIG=~/.kube/eks-staging kubectl"
 alias kp="KUBECONFIG=~/.kube/eks-production kubectl"
 
-# Istioctl aliases
-alias istg="istioctl --kubeconfig $propelinfra/terraform/global/kubeconfig_propel-eks-global"
-alias istd="istioctl --kubeconfig $propelinfra/terraform/development/kubeconfig_propel-eks-development"
-alias ists="istioctl --kubeconfig $propelinfra/terraform/staging/kubeconfig_propel-eks-staging"
-alias istp="istioctl --kubeconfig $propelinfra/terraform/production/kubeconfig_propel-eks-prod"
-
 # Helm aliases
 alias hlg="KUBECONFIG=~/.kube/eks-global helm"
 alias hld="KUBECONFIG=~/.kube/eks-development helm"
