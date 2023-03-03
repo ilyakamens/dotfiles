@@ -11,7 +11,8 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "window.newWindowDimensions": "maximized",
   "[python]": {
-    "editor.formatOnPaste": false
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": true
   },
   "[javascript]": {
     "editor.tabSize": 2
@@ -106,6 +107,12 @@
   },
   "workbench.editor.enablePreview": false,
   "jestrunner.jestCommand": "pnpm run test:unit",
-  "window.zoomLevel": 1,
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "window.zoomLevel": 1
 }
