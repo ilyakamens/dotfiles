@@ -28,11 +28,6 @@ export propelinfra="$propel/propel-infrastructure"
 export providersidentity="$propel/providers-identity"
 export propelsharedpy="$propel/propel-shared-py"
 
-export KG="$propelinfra/terraform/global/kubeconfig_propel-eks-global"
-export KD="$propelinfra/terraform/development/kubeconfig_propel-eks-development"
-export KS="$propelinfra/terraform/staging/kubeconfig_propel-eks-staging"
-export KP="$propelinfra/terraform/production/kubeconfig_propel-eks-prod"
-
 alias cdp="cd $propel"
 alias cdserver="cd $freshebtserver"
 alias cdv="cd $freshebtvue"
