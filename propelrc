@@ -44,6 +44,8 @@ alias fixtranslations='ds manage update_i18n'
 alias uninstallandroid='adb uninstall com.propel.ebenefits > /dev/null'
 alias installandroid2="adb install ~/android-debug.apk"
 
+alias dockerlogin="aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 608965757603.dkr.ecr.us-west-2.amazonaws.com"
+
 # Kubectl aliases
 alias kg="KUBECONFIG=~/.kube/eks-global kubectl"
 alias kd="KUBECONFIG=~/.kube/eks-development kubectl"
