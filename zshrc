@@ -69,14 +69,6 @@ get_git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
 
-gpu() {
-    branch=$(git rev-parse --abbrev-ref HEAD)
-    if [[ $# -eq 1 ]]; then
-        branch="$1"
-    fi
-    git push -u origin "$branch"
-}
-
 gg() {
     if [[ $# -lt 1 ]]; then
         echo "Usage: 'gg foo bar baz' searches for 'foo' and excludes dirs/files 'bar' and 'baz'"
