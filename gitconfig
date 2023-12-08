@@ -1,9 +1,5 @@
 # This is Git's per-user configuration file.
 
-[user]
-    name = Ilya Kamens
-    email = ilyakamens@gmail.com
-
 [alias]
     co = checkout
     ci = commit
@@ -26,3 +22,7 @@
 
 [rebase]
     updateRefs = true
+
+[user]
+    name = Ilya Kamens
+    email = ilyakamens@gmail.com
