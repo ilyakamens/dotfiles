@@ -2,6 +2,7 @@ path=("/usr/local/bin" $path)
 path+=("/Library/PostgreSQL/12/bin/")
 path+=("/usr/local/mysql/bin")
 path+=("$HOME/Library/Python/3.8/bin")
+path+=("$HOME/Library/Python/3.11/bin")
 path+=("$HOME/google-cloud-sdk/bin")
 path+=("/usr/local/go/bin")
 export PATH
