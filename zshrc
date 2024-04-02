@@ -135,6 +135,7 @@ grm() {
 source ~/dev/dotfiles/propelrc
 
 # misc
+source ~/.secrets
 function activate() {
     source "$HOME/.virtualenvs/$1/bin/activate"
 }
