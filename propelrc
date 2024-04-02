@@ -27,12 +27,14 @@ export freshcardserver="$propel/freshcard-server"
 export propelinfra="$propel/propel-infrastructure"
 export providersidentity="$propel/providers-identity"
 export propelsharedpy="$propel/propel-shared-py"
+export jenkinssharedlibrary="$propel/jenkins-shared-library"
 
 alias cdp="cd $propel"
 alias cdserver="cd $freshebtserver"
 alias cdv="cd $freshebtvue"
 alias cdpi="cd $providersidentity"
 alias cdpsp="cd $propelsharedpy"
+alias cdjsl="cd $jenkinssharedlibrary"
 alias listdevices='adb devices'
 alias phonelogs='adb logcat'
 alias ingrok='ngrok http 1337'
