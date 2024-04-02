@@ -53,6 +53,7 @@ alias kg="KUBECONFIG=~/.kube/eks-global kubectl"
 alias kd="KUBECONFIG=~/.kube/eks-development kubectl"
 alias ks="KUBECONFIG=~/.kube/eks-staging kubectl"
 alias kp="KUBECONFIG=~/.kube/eks-production kubectl"
+alias kvp="KUBECONFIG=~/.kube/eks-vault-prod.yaml kubectl"
 
 # Helm aliases
 alias hlg="KUBECONFIG=~/.kube/eks-global helm"
