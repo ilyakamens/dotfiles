@@ -42,6 +42,13 @@ alias rfrsh='source ~/.zshrc'
 alias cddev='cd ~/dev'
 alias cddf='cd ~/dev/dotfiles'
 
+# child support
+export cs="$HOME/dev/something-useful"
+alias csa="cd $cs/childsupport-app"
+alias css="cd $cs/childsupport-server"
+alias csdeploy="git push heroku main"
+alias cslog="heroku log --tail --force-colors"
+
 # git
 alias ga='git add'
 alias gaa='git add -A'
