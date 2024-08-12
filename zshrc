@@ -141,6 +141,9 @@ grm() {
 # propel
 source ~/dev/dotfiles/propelrc
 
+# child support
+source ~/dev/dotfiles/childsupportrc
+
 # misc
 source ~/.secrets
 function activate() {

@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+export cs="$HOME/dev/something-useful"
+export csa="$cs/childsupport-app"
+export css="$cs/childsupport-server"
+alias cdcsa="cd $csa"
+alias cdcss="cd $css"
+alias csdeploy="git push heroku main"
+alias cslog="heroku log --tail --force-colors"
+
+CHILDSUPPORT_SERVER_SETUP_ENV="$css/bin/env"
+if [[ -r "${CHILDSUPPORT_SERVER_SETUP_ENV}" ]]; then
+    . "${CHILDSUPPORT_SERVER_SETUP_ENV}"
+fi
