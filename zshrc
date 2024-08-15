@@ -125,7 +125,7 @@ gcob() {
         return
     fi
 
-    git co -b "ilya/$1"
+    git co -b "$1"
 }
 
 # Git rebase main: Set `main` as the base branch.
