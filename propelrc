@@ -5,18 +5,18 @@
 
 source ~/.secrets
 
-export IOS_BUILD_DIR="platforms/ios/build"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
-export ANDROID_HOME="/usr/local/android"
-export ANDROID_SDK_ROOT="/usr/local/android"
-export ANDROIDSDK="/usr/local/android"
-export GRADLE_HOME="/opt/gradle/gradle-5.3.1"
-export PATH=/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
-export PATH=~/Desktop/apache-maven-3.6.0/bin:$PATH
-export PATH="/usr/local/android/platform-tools:$PATH"
-export PATH=$GRADLE_HOME/bin:$PATH
-export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
+#export IOS_BUILD_DIR="platforms/ios/build"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
+#export ANDROID_HOME="/usr/local/android"
+#export ANDROID_SDK_ROOT="/usr/local/android"
+#export ANDROIDSDK="/usr/local/android"
+#export GRADLE_HOME="/opt/gradle/gradle-5.3.1"
+#export PATH=/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support:$PATH
+#export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+#export PATH=~/Desktop/apache-maven-3.6.0/bin:$PATH
+#export PATH="/usr/local/android/platform-tools:$PATH"
+#export PATH=$GRADLE_HOME/bin:$PATH
+#export PATH="/opt/gradle/gradle-4.10.2/bin:$PATH"
 
 export propel="$HOME/dev/propel"
 export freshebtserver="$propel/freshebt-server"

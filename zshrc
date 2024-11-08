@@ -9,6 +9,7 @@ export PATH
 
 export GOPATH=/usr/local/go/bin
 export EDITOR=vim
+export JAVA_HOME=`/usr/libexec/java_home`
 
 # prevent path from expanding/duplicating
 # when zshrc is sourced
